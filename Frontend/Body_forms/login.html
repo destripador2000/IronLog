@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="/Actions_forms/main.ts"></script>
-    <link rel="stylesheet" href="/Style_forms/style.css"/>
+    <script type="module" src="../Actions_forms/main.ts"></script>
+    <link rel="stylesheet" href="../Style_forms/login_style.css"/>
     <title>Inicio de Sesion</title>
 </head>
 <body>
-    
+    <h1 class="saludo">¡Bienvenido!</h1>
+    <h2 class="subtitulo">Inicia sesión para continuar</h2>
+    <form id="loginForm">
+        <label class="lbl_username">Usuario:</label>
+        <input type="text" class="username" placeholder="Username" required />
+        <label class="lbl_password">Contraseña:</label>
+        <input type="password" class="password" placeholder="Password" required />
+        <button class="btn_login" type="submit">Iniciar Sesión</button>
 </body>
 </html>
