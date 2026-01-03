@@ -1,0 +1,9 @@
+# Ignorar dependencias de Node (Frontend)
+node_modules/
+dist/
+
+# Ignorar entorno virtual de Python (Backend)
+venv/
+__pycache__/
+*.pyc
+*.sqlite
