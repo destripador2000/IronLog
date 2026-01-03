@@ -1,0 +1,16 @@
+body{
+    background-color: #1d1c1c;
+}
+.saludo{
+    font-size: 40px;
+    color: #fff;
+    font-family: sans-serif;
+    margin-left: 500px;
+}
+
+.subtitulo{
+    font-size: 20px;
+    color: #fff;
+    font-family: sans-serif;
+    margin-left: 490px;
+}
