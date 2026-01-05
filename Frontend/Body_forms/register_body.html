@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./Actions_forms/action_register.ts"></script>
+    <link rel="stylesheet" href="../Style_forms/register_style.css"/>
+    <title>GYM MODE</title>
+</head>
+<body>    
+<form id="personaldataform">
+    <h1 id="lbl_title">DATOS PERSONALES</h1>
+    <input id="txt_name" type="text" placeholder="Nombres" required>
+    <input id="txt_lastname" type="text" placeholder="Apellidos" required>
+    <input id="txt_email" type="email" placeholder="Correo" required>
+    <input id="txt_phone" type="text" placeholder="Telefono" required>
+    <input id= "txt_age" type="text" placeholder="Edad" required>
+    <input id="txt_birth" type="date" required>
+    <input id="txt_gender" type="text" placeholder="Sexo" required>
+    <input id="txt_cdi" type="text" placeholder="Número de Cédula" required>    
+</form>
+<form id="userdataform">
+    <h1 id="lbl_title_userdata">DATOS DE USUARIO</h1>
+    <input id="txt_username" type="text" placeholder="Usuario" required>
+    <input id="txt_password" type="password" placeholder="Contraseña" required>
+    <input id="txt_confirm_password" type="password" placeholder="Confirme su contraseña" required>
+    <button id="btn_register" type="submit">Registrar</button>
+</form>
+
+</body>
+</html>

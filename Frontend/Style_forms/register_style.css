@@ -1,0 +1,273 @@
+body{
+    background-image: url('../Assets/Image/fondo_body.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#lbl_title{
+    font-size: 26px;
+    color: #fff;
+    font-family: sans-serif bold;
+    margin-left: 120px;
+    margin-top: 25px;
+}
+
+#personaldataform{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(39, 39, 39, 0.5);
+    backdrop-filter: blur(3px);
+    width: 500px;
+    height: 380px;
+    margin-left: 200px;
+    margin-top: 80px;
+    border-radius: 25px;
+    border: rgb(69, 69, 70) 1px solid;
+}
+
+#txt_name{
+    margin-left: 45px;
+    height: 35px;
+    width: 180px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+    color: #fff;
+    border: rgb(0, 153, 255) 1px solid;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+}
+
+#txt_name::placeholder{
+    color: #eee;
+    padding: 15px;
+}
+
+#txt_lastname{
+    margin-left: 260px;
+    margin-top: -38px;
+    height: 35px;
+    width: 180px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+    color: #fff;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+}
+
+#txt_lastname::placeholder{
+    color: #eee;
+    padding: 15px;
+}
+
+#txt_email{
+    margin-left: 45px;
+    margin-top: 20px;
+    height: 35px;
+    width: 180px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+    color: #fff;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+}
+
+#txt_email::placeholder{
+    color: #eee;
+    padding: 15px;
+}
+
+#txt_phone{
+    margin-left: 260px;
+    margin-top: -39px;
+    height: 35px;
+    width: 180px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+    color: #fff;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+}
+
+#txt_phone::placeholder{
+    color: #eee;
+    padding: 15px;
+}
+
+#txt_age{
+    margin-left: 45px;
+    margin-top: 20px;
+    height: 35px;
+    width: 180px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+    color: #fff;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+}
+
+#txt_age::placeholder{
+    color: #eee;
+    padding: 15px;
+}
+
+#txt_birth{
+    margin-left: 260px;
+    margin-top: -39px;
+    height: 35px;
+    width: 184px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+    color: #fff;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+}
+
+#txt_gender{
+    margin-left: 45px;
+    margin-top: 20px;
+    height: 35px;
+    width: 180px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+    color: #fff;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+}
+
+#txt_gender::placeholder{
+    color: #fff;
+    padding: 15px;
+}
+
+#txt_cdi{
+    margin-left: 260px;
+    margin-top: -39px;
+    height: 35px;
+    width: 180px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+    color: #fff;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+}
+
+#txt_cdi::placeholder{
+    color: #eee;
+    padding: 15px;
+}
+
+#lbl_title_userdata{
+    font-size: 26px;
+    color: #fff;
+    font-family: sans-serif bold;
+    margin-left: 120px;
+    margin-top: 25px;
+}
+
+#userdataform{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(39, 39, 39, 0.5);
+    backdrop-filter: blur(3px);
+    width: 500px;
+    height: 380px;
+    margin-left: 800px;
+    margin-top: -380px;
+    border-radius: 25px;
+    border: rgb(69, 69, 70) 1px solid;
+}
+
+#txt_username{
+    margin-left: 45px;
+    margin-top: 25px;
+    height: 35px;
+    width: 180px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+    color: #fff;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+}
+
+#txt_username::placeholder{
+    color: #eee;
+    padding: 15px;
+}
+
+#txt_password{
+    margin-left: 260px;
+    margin-top: -39px;
+    height: 35px;
+    width: 180px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+    color: #fff;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+}
+
+#txt_password::placeholder{
+    color: #eee;
+    padding: 15px;
+}
+
+#txt_confirm_password{
+    margin-left: 140px;
+    margin-top: 30px;
+    height: 35px;
+    width: 200px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: sans-serif;
+    background: transparent;
+    color: #fff;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+}
+
+#txt_confirm_password::placeholder{
+    color: #eee;
+    padding: 15px;
+}
+
+#btn_register{
+    margin-top: 35px;
+    margin-left: 155px;
+    width: 180px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+    font-family: sans-serif;
+    background:linear-gradient(10deg, #0523ca, #f1f0ef);
+    color: #fff;
+    cursor: pointer;
+}
