@@ -7,7 +7,7 @@ body{
     margin: 0;
 }
 
-.subtitulo{
+#subtitulo{
     font-size: 40px;
     color: #fff;
     font-family: sans-serif bold;
@@ -15,7 +15,7 @@ body{
     margin-top: 25px;
 }
 
-.loginform{
+#loginform{
     display: flex;
     flex-direction: column;
     background-color: rgba(39, 39, 39, 0.5);
@@ -28,7 +28,7 @@ body{
     border: rgb(69, 69, 70) 1px solid;
 }
 
-.txt_username{
+#txt_username{
     margin-left: 50px;
     width: 400px;
     height: 40px;
@@ -38,14 +38,16 @@ body{
     font-family: sans-serif;
     background: transparent;
     color: #fff;
-    border: rgb(37, 37, 228) 1px solid;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
 }
-.txt_username::placeholder{
+#txt_username::placeholder{
     color: #c8c5c5;
     padding: 15px;
 }
 
-.txt_password{
+#txt_password{
     margin-top: 20px;
     margin-left: 50px;
     width: 400px;
@@ -56,15 +58,17 @@ body{
     font-family: sans-serif;
     background: transparent;
     color: #fff;
-    border: rgb(37, 37, 228) 1px solid;
+    border: rgb(0, 153, 255) 1px solid;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
 }
 
-.txt_password::placeholder{
+#txt_password::placeholder{
     color: #c8c5c5;
     padding: 15px;
 }
 
-.a_password{
+#a_password{
     margin-left: 50px;
     margin-top: 5px;
     font-size: 15px;
@@ -72,15 +76,23 @@ body{
     font-family: sans-serif;
 }
 
-.btn_login{
+#btn_login{
     margin-top: 50px;
     margin-left: 160px;
     width: 180px;
     height: 50px;
-    border-radius: 5px;
+    border-radius: 15px;
     border: none;
     font-size: 16px;
     font-family: sans-serif;
     background:linear-gradient(10deg, #0523ca, #f1f0ef);
     color: #fff;
+}
+
+#frm_register{
+    margin-left: 170px;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #2577f3;
+    font-family: sans-serif;
 }
