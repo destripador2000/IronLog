@@ -3,29 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="./Actions_forms/action_register.ts"></script>
+    <script type="module" src="../Actions_forms/action_register.ts"></script>
     <link rel="stylesheet" href="../Style_forms/register_style.css"/>
     <title>GYM MODE</title>
 </head>
 <body>    
-<form id="personaldataform">
-    <h1 id="lbl_title">DATOS PERSONALES</h1>
-    <input id="txt_name" type="text" placeholder="Nombres" required>
-    <input id="txt_lastname" type="text" placeholder="Apellidos" required>
-    <input id="txt_email" type="email" placeholder="Correo" required>
-    <input id="txt_phone" type="text" placeholder="Telefono" required>
-    <input id= "txt_age" type="text" placeholder="Edad" required>
-    <input id="txt_birth" type="date" required>
-    <input id="txt_gender" type="text" placeholder="Sexo" required>
-    <input id="txt_cdi" type="text" placeholder="Número de Cédula" required>    
-</form>
-<form id="userdataform">
-    <h1 id="lbl_title_userdata">DATOS DE USUARIO</h1>
-    <input id="txt_username" type="text" placeholder="Usuario" required>
-    <input id="txt_password" type="password" placeholder="Contraseña" required>
-    <input id="txt_confirm_password" type="password" placeholder="Confirme su contraseña" required>
-    <button id="btn_register" type="submit">Registrar</button>
-</form>
+    
+    <div class="bg-image"></div> <div class="modal-gym">
+        <h2 id="form-title">CREAR CUENTA</h2>
+        
+        <div class="progress-container">
+            <p id="progress-text">Paso 1 de 2</p>
+            <div class="progress-bar-bg">
+                <div id="progress-fill" class="progress-fill" style="width: 50%;"></div>
+            </div>
+        </div>
+
+        <form id="registroForm">
+            
+            <div id="paso-1" class="form-step active">
+                <div class="input-group">
+                    <label>Usuario</label>
+                    <input type="text" id="usuario" class="input-gym" placeholder="Ej. GymMaster99" required>
+                </div>
+                <div class="input-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="correo" class="input-gym" placeholder="correo@ejemplo.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="password" class="input-gym" placeholder="••••••••" required>
+                </div>
+                <div class="input-group">
+                    <label>Confirmar Contraseña</label>
+                    <input type="password" id="confirmPassword" class="input-gym" placeholder="••••••••" required>
+                </div>
+                
+                <button type="button" id="btn-siguiente" class="btn-primary">SIGUIENTE ➡</button>
+            </div>
+
+            <div id="paso-2" class="form-step hidden">
+                <div class="row">
+                    <div class="input-group">
+                        <label>Nombres</label>
+                        <input type="text" id="nombres" class="input-gym" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Apellidos</label>
+                        <input type="text" id="apellidos" class="input-gym" placeholder="Tus apellidos" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Teléfono</label>
+                    <input type="tel" id="telefono" class="input-gym" placeholder="+505 0000 0000" required>
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <label>Edad</label>
+                        <input type="number" id="edad" class="input-gym" placeholder="25" min="14" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Sexo</label>
+                        <select id="sexo" class="input-gym" required>
+                            <option value="" disabled selected>Seleccionar</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                            <option value="O">Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Fecha de Nacimiento</label>
+                    <input type="date" id="fechaNacimiento" class="input-gym" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Número de Cédula</label>
+                    <input type="text" id="cedula" class="input-gym" placeholder="001-000000-0000A" required>
+                </div>
+
+                <div class="buttons-container">
+                    <button type="button" id="btn-atras" class="btn-secondary">⬅ ATRÁS</button>
+                    <button type="submit" class="btn-primary" id="btn_final_registro">REGISTRARME</button>
+                </div>
+            </div>
+        </form> 
+    </div>
 
 </body>
 </html>

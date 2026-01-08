@@ -1,273 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body{
-    background-image: url('../Assets/Image/fondo_body.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-#lbl_title{
-    font-size: 26px;
-    color: #fff;
-    font-family: sans-serif bold;
-    margin-left: 120px;
-    margin-top: 25px;
-}
-
-#personaldataform{
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    background-color: rgba(39, 39, 39, 0.5);
-    backdrop-filter: blur(3px);
-    width: 500px;
-    height: 380px;
-    margin-left: 200px;
-    margin-top: 80px;
-    border-radius: 25px;
-    border: rgb(69, 69, 70) 1px solid;
+    justify-content: center;
+    align-items: center;
+    background-color: #050505;
+    overflow: hidden;
 }
 
-#txt_name{
-    margin-left: 45px;
-    height: 35px;
-    width: 180px;
-    border-radius: 15px;
-    font-size: 16px;
-    font-family: sans-serif;
-    background: transparent;
-    color: #fff;
-    border: rgb(0, 153, 255) 1px solid;
-    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+/* Imagen de fondo con overlay oscuro */
+.bg-image {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Usa aquí tu imagen de gimnasio */
+    background: url('../Assets/Image/fondo_body.jpg') no-repeat center center/cover;
+    filter: brightness(0.4);
+    z-index: -1;
 }
 
-#txt_name::placeholder{
-    color: #eee;
-    padding: 15px;
+/* Modal Glassmorphism */
+.modal-gym {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(20, 20, 20, 0.75); /* Fondo oscuro translúcido */
+    backdrop-filter: blur(15px); /* Efecto borroso */
+    border: 1px solid rgba(0, 195, 255, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 30px rgba(0, 195, 255, 0.1);
+    color: white;
 }
 
-#txt_lastname{
-    margin-left: 260px;
-    margin-top: -38px;
-    height: 35px;
-    width: 180px;
-    font-size: 16px;
-    font-family: sans-serif;
-    background: transparent;
-    color: #fff;
-    border: rgb(0, 153, 255) 1px solid;
-    border-radius: 15px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-#txt_lastname::placeholder{
-    color: #eee;
-    padding: 15px;
+/* Barra de Progreso */
+.progress-container {
+    margin-bottom: 2rem;
 }
 
-#txt_email{
-    margin-left: 45px;
-    margin-top: 20px;
-    height: 35px;
-    width: 180px;
-    border-radius: 15px;
-    font-size: 16px;
-    font-family: sans-serif;
-    background: transparent;
-    color: #fff;
-    border: rgb(0, 153, 255) 1px solid;
-    border-radius: 15px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+#progress-text {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #00c3ff;
+    margin-bottom: 5px;
 }
 
-#txt_email::placeholder{
-    color: #eee;
-    padding: 15px;
+.progress-bar-bg {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-#txt_phone{
-    margin-left: 260px;
-    margin-top: -39px;
-    height: 35px;
-    width: 180px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-family: sans-serif;
-    background: transparent;
-    color: #fff;
-    border: rgb(0, 153, 255) 1px solid;
-    border-radius: 15px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0055ff, #00c3ff);
+    border-radius: 10px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave */
+    box-shadow: 0 0 10px #00c3ff;
 }
 
-#txt_phone::placeholder{
-    color: #eee;
-    padding: 15px;
+/* Inputs y Labels */
+.input-group {
+    margin-bottom: 1rem;
 }
 
-#txt_age{
-    margin-left: 45px;
-    margin-top: 20px;
-    height: 35px;
-    width: 180px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-family: sans-serif;
-    background: transparent;
-    color: #fff;
-    border: rgb(0, 153, 255) 1px solid;
-    border-radius: 15px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
-}
-
-#txt_age::placeholder{
-    color: #eee;
-    padding: 15px;
-}
-
-#txt_birth{
-    margin-left: 260px;
-    margin-top: -39px;
-    height: 35px;
-    width: 184px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-family: sans-serif;
-    background: transparent;
-    color: #fff;
-    border: rgb(0, 153, 255) 1px solid;
-    border-radius: 15px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
-}
-
-#txt_gender{
-    margin-left: 45px;
-    margin-top: 20px;
-    height: 35px;
-    width: 180px;
-    border-radius: 15px;
-    font-size: 16px;
-    font-family: sans-serif;
-    background: transparent;
-    color: #fff;
-    border: rgb(0, 153, 255) 1px solid;
-    border-radius: 15px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
-}
-
-#txt_gender::placeholder{
-    color: #fff;
-    padding: 15px;
-}
-
-#txt_cdi{
-    margin-left: 260px;
-    margin-top: -39px;
-    height: 35px;
-    width: 180px;
-    border-radius: 15px;
-    font-size: 16px;
-    font-family: sans-serif;
-    background: transparent;
-    color: #fff;
-    border: rgb(0, 153, 255) 1px solid;
-    border-radius: 15px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
-}
-
-#txt_cdi::placeholder{
-    color: #eee;
-    padding: 15px;
-}
-
-#lbl_title_userdata{
-    font-size: 26px;
-    color: #fff;
-    font-family: sans-serif bold;
-    margin-left: 120px;
-    margin-top: 25px;
-}
-
-#userdataform{
+.row {
     display: flex;
-    flex-direction: column;
-    background-color: rgba(39, 39, 39, 0.5);
-    backdrop-filter: blur(3px);
-    width: 500px;
-    height: 380px;
-    margin-left: 800px;
-    margin-top: -380px;
-    border-radius: 25px;
-    border: rgb(69, 69, 70) 1px solid;
+    gap: 10px;
 }
 
-#txt_username{
-    margin-left: 45px;
-    margin-top: 25px;
-    height: 35px;
-    width: 180px;
-    border-radius: 15px;
-    font-size: 16px;
-    font-family: sans-serif;
-    background: transparent;
-    color: #fff;
-    border: rgb(0, 153, 255) 1px solid;
-    border-radius: 15px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+label {
+    display: block;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-bottom: 5px;
 }
 
-#txt_username::placeholder{
-    color: #eee;
-    padding: 15px;
+input, select {
+    width: 100%;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    transition: 0.3s;
 }
 
-#txt_password{
-    margin-left: 260px;
-    margin-top: -39px;
-    height: 35px;
-    width: 180px;
-    border-radius: 15px;
-    font-size: 16px;
-    font-family: sans-serif;
-    background: transparent;
-    color: #fff;
-    border: rgb(0, 153, 255) 1px solid;
-    border-radius: 15px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
+input:focus, select:focus {
+    border-color: #00c3ff;
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
 }
 
-#txt_password::placeholder{
-    color: #eee;
-    padding: 15px;
+/* Botones */
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
 }
 
-#txt_confirm_password{
-    margin-left: 140px;
-    margin-top: 30px;
-    height: 35px;
-    width: 200px;
-    border-radius: 15px;
-    font-size: 16px;
-    font-family: sans-serif;
-    background: transparent;
-    color: #fff;
-    border: rgb(0, 153, 255) 1px solid;
-    border-radius: 15px;
-    box-shadow: 0px 0px 8px 0px rgba(0, 153, 255);
-}
-
-#txt_confirm_password::placeholder{
-    color: #eee;
-    padding: 15px;
-}
-
-#btn_register{
-    margin-top: 35px;
-    margin-left: 155px;
-    width: 180px;
-    height: 40px;
-    border-radius: 15px;
+button {
+    width: 100%;
+    padding: 12px;
     border: none;
-    font-size: 16px;
-    font-family: sans-serif;
-    background:linear-gradient(10deg, #0523ca, #f1f0ef);
-    color: #fff;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #0055ff, #00c3ff);
+    color: white;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 15px rgba(0, 195, 255, 0.6);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ccc;
+}
+
+.btn-secondary:hover {
+    border-color: white;
+    color: white;
+}
+
+/* Clases de utilidad para TS */
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
 }
