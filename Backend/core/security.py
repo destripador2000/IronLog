@@ -1,7 +1,7 @@
 import bcrypt
 from datetime import datetime, timedelta, timezone
 from jose import jwt
-from config import settings
+from core.config import settings
 
 # Función para hashear (Convertir texto a hash seguro)
 def hash_password(password: str) -> str:
