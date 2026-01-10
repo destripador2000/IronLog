@@ -1,5 +1,7 @@
 from sqlmodel import SQLModel, create_engine, Session   
 from models import *
+from typing import Annotated
+from fastapi import Depends
 
 sqlite_file_name = "dbIronLog.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"
@@ -12,3 +14,5 @@ def on_table_and_database():
 def get_session():
     with Session(engine) as session:
         yield session
+
+SessionDep = Annotated[Session, Depends(get_session)]
