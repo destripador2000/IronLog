@@ -1,5 +1,5 @@
 from sqlmodel import SQLModel
-
+from pydantic import BaseModel
 class UserSchema(SQLModel):
     names: str
     last_names: str
@@ -33,3 +33,7 @@ class UserRead(UserSchema):
     gender: str
     email: str
     username: str
+
+class UserLogin(BaseModel):
+    username: str
+    password: str
