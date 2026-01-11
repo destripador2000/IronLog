@@ -1,3 +1,5 @@
+const URL =  import.meta.env.VITE_URL_NEW_USER
+
 const paso1 = document.getElementById('paso-1') as HTMLDivElement;
 const paso2 = document.getElementById('paso-2') as HTMLDivElement;
 
@@ -21,7 +23,7 @@ const txt_cdi = document.getElementById('cedula') as HTMLInputElement;
 const select_gender = document.getElementById('sexo') as HTMLSelectElement;
 
 
-interface User{
+interface UserData{
     names: string;
     last_names: string;
     phone: string;
@@ -89,6 +91,51 @@ btnAtras.addEventListener('click', () => {
     progressText.innerText = 'Paso 1 de 2';
 });
 
+form.addEventListener('submit', async(e) =>{
+    e.preventDefault()
+    if (validarCampos(paso2)){
+            const UserJson: UserData = {
+                username: txt_username.value,
+                password: txt_password.value,
+                email: txt_email.value,
+                names: txt_names.value,
+                last_names: txt_last_names.value,
+                phone: txt_phone.value,
+                age: parseInt(txt_age.value),
+                birth_date: txt_birth_date.value,
+                cdi: txt_cdi.value,
+                gender: select_gender.value        
+                }
+                btnAdd.disabled = true
+    try {
+        
+        const response = await fetch(URL,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(UserJson),
+        });
+        
+        const data = await response.json();
+
+        if (response.ok){
+            alert("Te haz registrado exitosamente");
+            window.location.replace("../index.html");
+        } else {
+            alert(data.error || "Error en el inicio de sesión");
+        }
+        
+    }catch(error){
+        console.error("Error al registrarse", error);
+        alert("Error de conexión con el servidor");
+    }
+    }else{
+        alert("Por favor completa los campos obligatorios.");
+    }
+});
+
+/*
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
     
@@ -107,7 +154,7 @@ form.addEventListener('submit', (e: Event) => {
         gender: select_gender.value
         };
         btnAdd.disabled = true;
-        fetch("http://127.0.0.1:8000/users/",{
+        fetch(URL,{
             method: "POST",
             headers:{
                 "Content-Type":"application/json"
@@ -138,3 +185,4 @@ form.addEventListener('submit', (e: Event) => {
     }
     
 });
+*/
