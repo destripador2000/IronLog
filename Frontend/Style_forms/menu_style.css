@@ -1,0 +1,169 @@
+body{
+    background-image: url('../Assets/Image/fondo_body.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.desing_bar{
+    background-color: rgba(20, 20, 20, 0.75);
+    height: 60px;
+    width: 1528px;
+    border-radius: 6px;
+}
+
+#top_bar{
+    margin-top: -5px;    
+}
+
+#title_bar{
+    color: #fff;
+    font-size: 48px;
+    font-family: 'Gill Sans';
+    text-align: center;
+    margin-top: 5px;
+}
+
+.desing_option{
+    display: flex;
+    width: 180px;
+    height: 100px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 55, 255, 0.8);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 81, 255, 0.2);
+    border-color: rgb(3, 177, 230);
+    backdrop-filter: blur(2px);
+    border-style: solid;
+}
+
+.desing_lbl{
+    color: #fff;
+    font-size: 28px;
+    font-family: sans-serif;
+    background-color: rgba(0, 81, 255, 0.2);
+    border-color: rgb(3, 177, 230);
+    backdrop-filter: blur(2px);
+    border-style: solid;
+    width: 200px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+#btn_routine{
+    background-image: url("../Assets/Image/dumbell_image.png");   
+    margin-top: 10px;
+    margin-left: 500px;
+    margin-top: 120px;
+}
+#btn_progress{
+    background-image: url("../Assets/Image/progress_image.png");
+    margin-left: 850px;
+    margin-top: -175px;
+}
+
+#btn_nutrition{
+    background-image: url("../Assets/Image/nutrition_image.png");
+    margin-left: 500px;
+    margin-top: 50px;
+}
+
+#btn_settings{
+    background-image: url("../Assets/Image/setting_image.png");
+    margin-left: 850px;
+    margin-top: -172px;
+}
+
+#lbl_routine{
+    margin-left: 490px;
+}
+
+#lbl_progress{
+    margin-left: 840px;
+}
+
+#lbl_nutrition{
+    margin-left: 490px;
+}
+
+#lbl_settings{
+    margin-left: 840px;
+}
+
+#down_bar{
+    margin-top: 129px;
+}
+
+.desing_option_down{
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    margin: 0;
+    background-position: center;
+    border: none;
+    width: 50px;
+    height: 40px;
+    background-color: transparent;    
+}
+
+.desing_lbl_down{
+    font-size: 16px;
+    margin-top: 10px;
+    color: #fff;
+}   
+
+#btn_home{
+    background-image: url(../Assets/Image/home_image.png);
+    margin-left: 150px ;
+}
+
+#lbl_home{
+    margin-left: 156px;
+    margin-top: 2px;
+}
+
+#btn_calendar{
+    background-image: url(../Assets/Image/calendar_image.png);
+    margin-left: 405px;
+    margin-top: -68px;
+}
+
+#lbl_calendar{
+margin-left: 390px;
+margin-top: -2px;
+}
+
+#btn_training{
+    background-image: url(../Assets/Image/dumbell_ico.png);
+    margin-left: 750px;
+    margin-top: -68px;
+}
+
+#lbl_training{
+    margin-left: 745px;
+    margin-top: -2px;
+}
+
+#btn_community{
+    background-image: url(../Assets/Image/comunity_image.png);
+    margin-left: 1050px;
+    margin-top: -68px;
+}
+
+#lbl_community{
+    margin-left: 1035px;
+    margin-top: -2px;
+}
+
+#btn_user{
+    background-image: url(../Assets/Image/User_ico.png);
+    margin-left: 1310px;
+    margin-top: -68px;
+}
+
+#lbl_user{
+    margin-left: 1310px;
+    margin-top: -2px;
+}
