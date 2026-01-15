@@ -29,6 +29,7 @@ btn_login.addEventListener('click', async (e) => {
 
         if (response.ok) {
             alert("Inicio de sesión exitoso.");
+            window.location.replace("./Body_forms/menu_body.html")
         } else {
             alert(data.error || "Error en el inicio de sesión");
         }
