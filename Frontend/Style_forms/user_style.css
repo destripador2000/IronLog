@@ -1,0 +1,235 @@
+body {
+    background: linear-gradient(135deg, #0f172a 100%, #1e293b 0%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background-attachment: fixed;
+}
+
+.screen_profile {
+    width: 90%;
+    max-width: 800px; /* Ancho máximo para PC */
+    margin: 0 auto;   /* Centrado */
+    padding-bottom: 80px; /* Espacio para que no choque con la barra de abajo */
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
+
+/* --- 1. CABECERA (AVATAR) --- */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+}
+
+.avatar-glow {
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    filter: blur(10px); /* El efecto neón */
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: url('../Assets/Image/User_ico.png'); /* IMAGEN POR DEFECTO */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    border: 3px solid #1e293b; /* Borde oscuro para separar del brillo */
+}
+
+.avatar-badge {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #0ea5e9;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    z-index: 2;
+    border: 2px solid #0f172a;
+}
+
+.profile-name {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.profile-badges {
+    display: flex;
+    gap: 10px;
+    margin-top: 0.5rem;
+}
+
+.badge-level {
+    background-color: rgba(15, 15, 15, 0.9); /* Azul transparente */
+    color: #1cf0ff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid rgba(14, 165, 233, 0.4);
+}
+
+.badge-member {
+    background-color: #334155;
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* --- 2. ESTADÍSTICAS (GRID SYSTEM) --- */
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 Columnas en PC */
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: #1e293b; /* Fondo tarjeta */
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    /* Aquí pondrás tus background-image luego */
+}
+
+.stat-label {
+    color: #94a3b8; /* Gris claro */
+    font-size: 0.8rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.unit {
+    font-size: 1rem;
+    color: #64748b;
+}
+
+/* --- 3. MENÚ VERTICAL --- */
+.profile-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.menu-item {
+    background-color: rgba(15, 15, 15, 0.617); /* Semi transparente */
+    border: 1px solid #334155;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.menu-item:hover {
+    background-color: rgba(30, 41, 59, 1);
+}
+
+.menu-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+}
+
+.menu-icon {
+    background-color: #334155;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.menu-text h4 { margin: 0; font-size: 1rem; }
+.menu-text p { margin: 3px 0 0 0; font-size: 0.8rem; color: #94a3b8; }
+
+.tag-pro {
+    background-color: #0ea5e9;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* --- BOTÓN LOGOUT --- */
+.btn-logout {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(239, 68, 68, 0.647); /* Rojo muy suave */
+    border: 1px solid #ef4444; /* Borde Rojo */
+    color: #f4f4f4; /* Texto Rojo */
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: #ef4444;
+    color: white;
+}
+
+/* --- 📱 MEDIA QUERY (RESPONSIVE) --- */
+@media (max-width: 768px) {
+    .stats-container {
+        /* En móvil, cambiamos a 1 columna para que las tarjetas sean grandes */
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+    }
+    
+    .profile-header {
+        margin-top: 1rem;
+    }
+}
