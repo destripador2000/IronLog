@@ -4,39 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Style_forms/menu_style.css">
+    <script type="module" src="../Actions_forms/action_menu.ts"></script>   
     <title>GYM MODE</title>
 </head>
 <body>
+    
     <div class="desing_bar" id="top_bar">
         <h1 id="title_bar">GYM MODE</h1>
     </div>
-        <button class="desing_option" id="btn_routine"></button>
-        <h1 class="desing_lbl" id="lbl_routine">Rutina</h1>
-        
-        <button class="desing_option" id="btn_progress"></button>
-        <h1 class="desing_lbl" id="lbl_progress">Progreso</h1>
-        
-        <button class="desing_option" id="btn_nutrition"></button>
-        <h1 class="desing_lbl" id="lbl_nutrition">Nutrición</h1>
 
-        <button class="desing_option" id="btn_settings"></button>
-        <h1 class="desing_lbl" id="lbl_settings">Ajustes</h1>
-    
+    <div class="screen_home">
+        
+        <div class="menu-card">
+            <button class="desing_option" id="btn_routine"></button>
+            <h1 class="desing_lbl">Rutina</h1>
+        </div>
+
+        <div class="menu-card">
+            <button class="desing_option" id="btn_progress"></button>
+            <h1 class="desing_lbl">Progreso</h1>
+        </div>
+
+        <div class="menu-card">
+            <button class="desing_option" id="btn_nutrition"></button>
+            <h1 class="desing_lbl">Nutrición</h1>
+        </div>
+
+        <div class="menu-card">
+            <button class="desing_option" id="btn_settings"></button>
+            <h1 class="desing_lbl">Ajustes</h1>
+        </div>
+
+    </div>
+
     <div class="desing_bar" id="down_bar">
-        <button class="desing_option_down" id="btn_home"></button>
-        <h1 class="desing_lbl_down" id="lbl_home">Inicio</h1>
         
-        <button class="desing_option_down" id="btn_calendar"></button>
-        <h1 class="desing_lbl_down" id="lbl_calendar">Calendario</h1>
-        
-        <button class="desing_option_down" id="btn_training"></button>
-        <h1 class="desing_lbl_down" id="lbl_training">Entrenar</h1>
+        <div class="nav-item">
+            <button class="desing_option_down" id="btn_home"></button>
+            <span class="desing_lbl_down">Inicio</span>
+        </div>
 
-        <button class="desing_option_down" id="btn_community"></button>
-        <h1 class="desing_lbl_down" id="lbl_community">Comunidad</h1>
-        
-        <button class="desing_option_down" id="btn_user"></button>
-        <h1 class="desing_lbl_down" id="lbl_user">Usuario</h1>    
+        <div class="nav-item">
+            <button class="desing_option_down" id="btn_calendar"></button>
+            <span class="desing_lbl_down">Calendario</span>
+        </div>
+
+        <div class="nav-item">
+            <button class="desing_option_down" id="btn_training"></button>
+            <span class="desing_lbl_down">Entrenar</span>
+        </div>
+
+        <div class="nav-item">
+            <button class="desing_option_down" id="btn_community"></button>
+            <span class="desing_lbl_down">Comunidad</span>
+        </div>
+
+        <div class="nav-item">
+            <button class="desing_option_down" id="btn_user"></button>
+            <span class="desing_lbl_down">Usuario</span>
+        </div>
     </div>
 </body>
 </html>
