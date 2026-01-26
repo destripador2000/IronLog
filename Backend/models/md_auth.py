@@ -1,9 +1,10 @@
-from fastapi import APIRouter, Depends, HTTPException, Response
+from fastapi import APIRouter, HTTPException, Response
 from schemas.sch_Users import UserLogin
 from database.db import SessionDep
 from models.md_Users import UserBase
 from core.security import verify_password, create_access_token
 from sqlmodel import select
+from typing import Annotated
 
 router = APIRouter()
 
@@ -19,7 +20,11 @@ async def login_for_access_token(session: SessionDep,
     response.set_cookie(
         key="access_token",
         value=create_access_token(data={"sub": filtro.username}),
-        httponly=True
+        httponly=True,
+        path="/",
+        samesite="lax",
+        secure=False
     )
 
-    return "Login exitoso"
+    return {"username": filtro.username, 
+            "gender": filtro.gender}        
