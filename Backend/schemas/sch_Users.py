@@ -23,7 +23,7 @@ class UserCreate(UserSchema):
     username: str
     password: str
 
-class UserRead(UserSchema):
+class UserRead(SQLModel):
     id: int
     names: str
     last_names: str

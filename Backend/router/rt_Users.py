@@ -4,6 +4,8 @@ from sqlmodel import Session
 from database.db import get_session 
 from core.security import hash_password
 from models.md_Users import UserBase as UserModel
+from typing import Annotated
+from core.security import get_current_user
 
 router = APIRouter()
 
@@ -27,4 +29,8 @@ def create_user(user: UserCreate, session: Session = Depends(get_session)):
     session.refresh(new_user)
     return new_user
 
-
+@router.get("/me", response_model=UserRead)
+async def read_users_me(
+    current_user: Annotated[UserRead, Depends(get_current_user)]    
+):
+    return current_user
