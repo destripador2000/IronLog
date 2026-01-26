@@ -1,169 +1,143 @@
-body{
+/* --- CONFIGURACIÓN BASE --- */
+body {
     background-image: url('../Assets/Image/fondo_body.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
-}
-
-.desing_bar{
-    background-color: rgba(20, 20, 20, 0.75);
-    height: 60px;
-    width: 100%;
-    border-radius: 6px;
-}
-
-#top_bar{
-    margin-top: -5px;    
-}
-
-#title_bar{
-    color: #fff;
-    font-size: 48px;
-    font-family: 'Gill Sans';
-    text-align: center;
-    margin-top: 5px;
-}
-
-.desing_option{
-    display: flex;
-    width: 180px;
-    height: 100px;
-    border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0, 55, 255, 0.8);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgba(0, 81, 255, 0.2);
-    border-color: rgb(3, 177, 230);
-    backdrop-filter: blur(2px);
-    border-style: solid;
-}
-
-.desing_lbl{
-    color: #fff;
-    font-size: 28px;
-    font-family: sans-serif;
-    background-color: rgba(0, 81, 255, 0.2);
-    border-color: rgb(3, 177, 230);
-    backdrop-filter: blur(2px);
-    border-style: solid;
-    width: 200px;
-    text-align: center;
-    border-radius: 15px;
-}
-
-#btn_routine{
-    background-image: url("../Assets/Image/dumbell_image.png");   
-    margin-top: 10px;
-    margin-left: 500px;
-    margin-top: 120px;
-}
-#btn_progress{
-    background-image: url("../Assets/Image/progress_image.png");
-    margin-left: 850px;
-    margin-top: -175px;
-}
-
-#btn_nutrition{
-    background-image: url("../Assets/Image/nutrition_image.png");
-    margin-left: 500px;
-    margin-top: 50px;
-}
-
-#btn_settings{
-    background-image: url("../Assets/Image/setting_image.png");
-    margin-left: 850px;
-    margin-top: -172px;
-}
-
-#lbl_routine{
-    margin-left: 490px;
-}
-
-#lbl_progress{
-    margin-left: 840px;
-}
-
-#lbl_nutrition{
-    margin-left: 490px;
-}
-
-#lbl_settings{
-    margin-left: 840px;
-}
-
-#down_bar{
-    margin-top: 129px;
-}
-
-.desing_option_down{
+    font-family: 'Gill Sans', sans-serif;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-repeat: no-repeat;
-    margin: 0;
-    background-position: center;
-    border: none;
-    width: 50px;
-    height: 40px;
-    background-color: transparent;    
+    justify-content: space-between; /* Empuja la barra inferior al final */
 }
 
-.desing_lbl_down{
-    font-size: 16px;
-    margin-top: 10px;
+/* --- BARRA SUPERIOR --- */
+.desing_bar {
+    background-color: rgba(20, 20, 20, 0.75);
+    width: 100%;
+    padding: 1rem 0; /* Espacio interno */
+}
+
+#title_bar {
     color: #fff;
-}   
-
-#btn_home{
-    background-image: url(../Assets/Image/home_image.png);
-    margin-left: 150px ;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0; /* Sin márgenes extraños */
 }
 
-#lbl_home{
-    margin-left: 156px;
-    margin-top: 2px;
+/* --- GRID PRINCIPAL (BOTONES GRANDES) --- */
+.screen_home {
+    display: grid;
+    /* En PC: 2 columnas iguales */
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; /* Espacio entre botones */
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto; /* Centrado horizontalmente */
+    width: 90%;
 }
 
-#btn_calendar{
-    background-image: url(../Assets/Image/calendar_image.png);
-    margin-left: 405px;
-    margin-top: -68px;
+/* --- TARJETAS INDIVIDUALES --- */
+.menu-card {
+    display: flex;
+    flex-direction: column; /* Botón arriba, texto abajo */
+    align-items: center; /* Centrados */
 }
 
-#lbl_calendar{
-margin-left: 390px;
-margin-top: -2px;
+.desing_option {
+    width: 100%;
+    max-width: 200px; /* Tamaño máximo bonito */
+    height: 150px;    /* Altura fija */
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 55, 255, 0.8);
+    background-position: center;
+
+    background-repeat: no-repeat;
+    background-size: auto 80px;
+
+    background-color: rgba(0, 81, 255, 0.2);
+    border: 2px solid rgb(3, 177, 230);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+    transition: transform 0.2s; /* Efecto al pasar mouse */
 }
 
-#btn_training{
-    background-image: url(../Assets/Image/dumbell_ico.png);
-    margin-left: 750px;
-    margin-top: -68px;
+.desing_option:hover {
+    transform: scale(1.05); /* Zoom sutil */
 }
 
-#lbl_training{
-    margin-left: 745px;
-    margin-top: -2px;
+.desing_lbl {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    background-color: rgba(0, 81, 255, 0.2);
+    border: 1px solid rgb(3, 177, 230);
+    backdrop-filter: blur(2px);
+    padding: 5px 20px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 120px;
 }
 
-#btn_community{
-    background-image: url(../Assets/Image/comunity_image.png);
-    margin-left: 1050px;
-    margin-top: -68px;
+/* --- IMÁGENES DE LOS BOTONES --- */
+#btn_routine   { background-image: url("../Assets/Image/dumbell_image.png"); }
+#btn_progress  { background-image: url("../Assets/Image/progress_image.png"); }
+#btn_nutrition { background-image: url("../Assets/Image/nutrition_image.png"); }
+#btn_settings  { background-image: url("../Assets/Image/setting_image.png"); }
+
+/* --- BARRA INFERIOR (NAVEGACIÓN) --- */
+#down_bar {
+    display: flex;
+    justify-content: space-around; /* Distribuye los íconos equitativamente */
+    align-items: center;
+    padding: 10px 0;
+    /* position: fixed; bottom: 0; */ /* Descomenta si quieres que siempre esté visible */
 }
 
-#lbl_community{
-    margin-left: 1035px;
-    margin-top: -2px;
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
 }
 
-#btn_user{
-    background-image: url(../Assets/Image/User_ico.png);
-    margin-left: 1310px;
-    margin-top: -68px;
+.desing_option_down {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 5px;
 }
 
-#lbl_user{
-    margin-left: 1310px;
-    margin-top: -2px;
+.desing_lbl_down {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* --- IMÁGENES BARRA INFERIOR --- */
+#btn_home      { background-image: url(../Assets/Image/home_image.png); }
+#btn_calendar  { background-image: url(../Assets/Image/calendar_image.png); }
+#btn_training  { background-image: url(../Assets/Image/dumbell_ico.png); }
+#btn_community { background-image: url(../Assets/Image/comunity_image.png); }
+#btn_user      { background-image: url(../Assets/Image/User_ico.png); }
+
+/* --- RESPONSIVE (MÓVIL) --- */
+@media (max-width: 768px) {
+    .screen_home {
+        /* En Móvil: 1 sola columna */
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+    }
+    
+    #title_bar {
+        font-size: 2rem;
+    }
+    
+    .desing_lbl_down {
+        font-size: 0.7rem; /* Texto más pequeñito en celular */
+    }
 }
