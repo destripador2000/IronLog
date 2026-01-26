@@ -1,0 +1,189 @@
+/* --- ESTILOS BASE (Escritorio) --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    background-color: #0f111a;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 40px;
+    margin-bottom: 40px; /* Margen abajo para poder hacer scroll en móvil */
+}
+
+/* --- Cabecera --- */
+.routine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #2a2d3e;
+    padding-bottom: 20px;
+    flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
+    gap: 20px;       /* Espacio entre título y botón si se juntan */
+}
+
+.header-text {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.back-btn {
+    color: #8b9bb4;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-btn:hover {
+    color: #fff;
+}
+
+/* Botón Nuevo */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 12px 24px;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar texto e icono */
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap; /* Evita que el texto del botón se parta en dos */
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(118, 75, 162, 0.5);
+}
+
+/* --- Grid de Tarjetas (AJUSTADO) --- */
+.routines-grid {
+    display: grid;
+    /* CAMBIO CLAVE: Bajamos de 350px a 280px para soportar móviles */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* --- Diseño de la Tarjeta --- */
+.routine-card {
+    background-color: #1c1f2e;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.routine-card:hover {
+    background-color: #23273a;
+    border-color: #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    background-color: #2a2d3e;
+    min-width: 50px; /* Asegura que el icono no se aplaste */
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #e2e8f0;
+}
+
+.card-info {
+    flex-grow: 1;
+    overflow: hidden; /* Evita desbordamiento de texto */
+}
+
+.card-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: #fff;
+    white-space: nowrap;      /* Puntos suspensivos si el texto es muy largo */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-info p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.edit-btn {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 5px; /* Mayor área de toque */
+}
+
+.edit-btn:hover {
+    color: #3b82f6;
+}
+
+/* =========================================
+   📱 ZONA RESPONSIVE (MÓVILES)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    .main-container {
+        width: 95%; /* Aprovechamos más pantalla en el móvil */
+        margin-top: 20px;
+    }
+
+    /* Cabecera vertical en móvil */
+    .routine-header {
+        flex-direction: column;
+        align-items: flex-start; /* Alinear a la izquierda */
+        gap: 15px;
+    }
+
+    .header-text {
+        width: 100%;
+        justify-content: space-between; /* Flecha a la izquierda, título un poco separado */
+    }
+
+    .header-text h1 {
+        font-size: 1.8rem; /* Texto más pequeño */
+    }
+
+    /* Botón gigante para dedo fácil */
+    .btn-primary {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+
+    /* Tarjetas más compactas */
+    .routines-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móviles muy estrechos */
+    }
+}

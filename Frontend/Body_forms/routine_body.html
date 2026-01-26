@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Mode - Rutinas</title>
+    <link rel="stylesheet" href="../Style_forms/routines_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="../Actions_forms/action_routines.ts"></script>
+</head>
+<body>
+    
+    <div class="main-container">
+        <header class="routine-header">
+            <div class="header-text">
+                <a href="./menu_body.html" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+                <h1>Mis Rutinas</h1>
+            </div>
+            <button id="btn_new_routine" class="btn-primary">
+                <i class="fas fa-plus"></i> Nueva Rutina
+            </button>
+        </header>
+
+        <div class="routines-grid" id="routines_container">
+            
+            <div class="routine-card">
+                <div class="card-icon">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <div class="card-info">
+                    <h3>LUNES: Pecho & Tríceps</h3>
+                    <p>8 ejercicios</p>
+                </div>
+                <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+            </div>
+
+            <div class="routine-card">
+                <div class="card-icon">
+                    <i class="fas fa-running"></i>
+                </div>
+                <div class="card-info">
+                    <h3>MIÉRCOLES: Pierna</h3>
+                    <p>6 ejercicios</p>
+                </div>
+                <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+            </div>
+            </div>
+    </div>
+</body>
+</html>
