@@ -221,6 +221,26 @@ body {
     color: white;
 }
 
+.navigation-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Alinea la flecha a la izquierda */
+    margin-bottom: 10px;         /* Un poco de aire antes de la foto */
+}
+
+.back-btn {
+    color: #8b9bb4;              /* Mismo color gris azulado que en Rutinas */
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.2s;
+    padding: 10px;               /* Área de clic más grande */
+}
+
+.back-btn:hover {
+    color: #fff;                 /* Blanco al pasar el mouse */
+    transform: translateX(-3px); /* Pequeña animación hacia la izquierda */
+}
+
 /* --- 📱 MEDIA QUERY (RESPONSIVE) --- */
 @media (max-width: 768px) {
     .stats-container {
