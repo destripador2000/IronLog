@@ -1,7 +1,12 @@
 import bcrypt
+from fastapi import HTTPException, Cookie, Depends
+from typing import Annotated 
 from datetime import datetime, timedelta, timezone
-from jose import jwt
+from jose import jwt, JWTError
 from core.config import settings
+from database.db import get_session
+from sqlmodel import Session, select
+from models.md_Users import UserBase
 
 # Función para hashear (Convertir texto a hash seguro)
 def hash_password(password: str) -> str:
@@ -43,3 +48,31 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
 
     # 2. La librería se encarga de comparar de forma segura
     return bcrypt.checkpw(password_byte_enc, hashed_password_byte_enc)
+
+def get_current_user(access_token: Annotated[str| None, Cookie()] = None, 
+                    session: Session = Depends(get_session)):
+    
+    print(f"DEBUG: Token recibido en cookie: {access_token}") 
+
+    
+    credentials_exception = HTTPException(
+        status_code=401,
+        detail="Could not validate credentials")
+    
+    if access_token is None:
+        raise credentials_exception
+    
+    try:
+        print(f"DEBUG: Usando SECRET_KEY: {settings.SECRET_KEY[:5]}...")
+        payload = jwt.decode(access_token, key=settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
+        username = payload.get("sub")
+        print(f"DEBUG: Token decodificado: {payload}")
+        if username is None:
+            raise credentials_exception
+    except JWTError as e:
+        print(f"DEBUG: Error al decodificar: {e}")
+        raise credentials_exception
+    user = session.exec(select(UserBase).where(UserBase.username == username)).first()
+    if user is None:
+        raise credentials_exception
+    return user
