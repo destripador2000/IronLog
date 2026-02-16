@@ -5,4 +5,4 @@ class ExerciseBase(SQLModel, table=True):
     name_exercise: str
     series: int
     reps: int
-    routine_id: int = Field(default=None, foreign_key=True)
+    routine_id: int = Field(default=None, foreign_key="routinebase.id_routine")
