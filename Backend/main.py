@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from database.db import on_table_and_database
 from contextlib import asynccontextmanager
 from router.rt_Users import router as user_router
+from router.rt_Routines import router as routine_router
 from models.md_auth import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -29,7 +30,7 @@ app.add_middleware(
 
 app.include_router(user_router, prefix="/users", tags=["users"])
 app.include_router(auth_router, prefix="/auth", tags=["auth"])
-
+app.include_router(routine_router, prefix="/routine", tags=["routines"])
 
 @app.get("/")
 def home():
