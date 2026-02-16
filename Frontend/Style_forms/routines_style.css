@@ -187,3 +187,164 @@ body {
         grid-template-columns: 1fr; /* Una sola columna en móviles muy estrechos */
     }
 }
+/* DISEÑO DE VENTANA PARA AGREGAR RUTINA */
+.hidden {
+    display: none !important;
+}
+
+/* El fondo oscuro que cubre toda la pantalla */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 17, 26, 0.85); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(5px); /* Efecto borroso de fondo (como en la imagen) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté encima de todo */
+    padding: 20px;
+}
+
+/* La caja del modal en sí */
+.modal-content {
+    background-color: #1c1f2e; /* Mismo color que tus tarjetas */
+    width: 100%;
+    max-width: 550px; /* No muy ancho */
+    border-radius: 16px;
+    border: 1px solid #2a2d3e;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    overflow: hidden; /* Para que las esquinas redondeadas funcionen bien */
+}
+
+/* --- Cabecera --- */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #2a2d3e;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #8b9bb4;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover { color: white; }
+
+/* --- Cuerpo --- */
+.modal-body {
+    padding: 25px;
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; color: #bdc6d4; font-size: 0.9rem; }
+
+/* Estilos de Inputs (igual que en tu login, consistencia) */
+input[type="text"],
+input[type="number"],
+.dark-select {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #13151f;
+    border: 1px solid #2a2d3e;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
+}
+input::placeholder { color: #5a6175; }
+input:focus, .dark-select:focus { border-color: #3b82f6; }
+
+.separator { border: none; border-top: 1px solid #2a2d3e; margin: 25px 0; }
+
+.modal-body h3 { font-size: 1.1rem; margin-bottom: 15px; color: white; }
+
+/* Formulario para añadir ejercicio (en una línea) */
+.add-exercise-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.inp-group-name { flex: 3; } /* El nombre ocupa más espacio */
+.inp-group-num { flex: 1; }  /* Los números ocupan menos */
+
+/* Botón azul pequeño para añadir (+) */
+.btn-icon-add {
+    flex: 0 0 45px; /* Ancho fijo */
+    height: 45px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb); /* Azul vibrante */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-icon-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Lista de ejercicios añadidos */
+.exercises-list {
+    max-height: 150px; /* Altura máxima con scroll si hay muchos */
+    overflow-y: auto;
+    border-radius: 8px;
+}
+.exercise-item {
+    background-color: #23273a;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #bdc6d4;
+}
+.btn-delete-ex {
+    background: transparent; border: none; color: #ef4444; cursor: pointer; font-size: 1rem;
+}
+
+/* --- Footer --- */
+.modal-footer {
+    padding: 20px 25px;
+    background-color: #171925; /* Un poco más oscuro que el cuerpo */
+    display: flex;
+    justify-content: flex-end; /* Botones a la derecha */
+    gap: 15px;
+    border-top: 1px solid #2a2d3e;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #3e4357;
+    color: #bdc6d4;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+.btn-secondary:hover {
+    border-color: #8b9bb4; color: white; background-color: rgba(255,255,255,0.05);
+}

@@ -22,29 +22,61 @@
         </header>
 
         <div class="routines-grid" id="routines_container">
-            
-            <div class="routine-card">
-                <div class="card-icon">
-                    <i class="fas fa-dumbbell"></i>
-                </div>
-                <div class="card-info">
-                    <h3>LUNES: Pecho & Tríceps</h3>
-                    <p>8 ejercicios</p>
-                </div>
-                <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
-            </div>
-
-            <div class="routine-card">
-                <div class="card-icon">
-                    <i class="fas fa-running"></i>
-                </div>
-                <div class="card-info">
-                    <h3>MIÉRCOLES: Pierna</h3>
-                    <p>6 ejercicios</p>
-                </div>
-                <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
-            </div>
             </div>
     </div>
+    <div id="modal_overlay" class="modal-overlay hidden">
+        
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nueva Rutina</h2>
+                <button id="btn_close_modal" class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="inp_routine_name">Nombre de la Rutina</label>
+                    <input type="text" id="inp_routine_name" placeholder="Ej: Torso / Pierna / Full Body">
+                </div>
+
+                <div class="form-group">
+                    <label for="slc_routine_day">Día Preferido</label>
+                    <select id="slc_routine_day" class="dark-select">
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miércoles">Miércoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                        <option value="Sábado">Sábado</option>
+                        <option value="Domingo">Domingo</option>
+                    </select>
+                </div>
+
+                <hr class="separator">
+
+                <h3>Ejercicios</h3>
+                <div class="add-exercise-form">
+                    <div class="inp-group-name">
+                        <input type="text" id="inp_ex_name" placeholder="Nombre del Ejercicio">
+                    </div>
+                    <div class="inp-group-num">
+                        <input type="number" id="inp_ex_series" placeholder="Series" min="1">
+                    </div>
+                    <div class="inp-group-num">
+                        <input type="number" id="inp_ex_reps" placeholder="Reps" min="2">
+                    </div>
+                    <button id="btn_add_exercise" class="btn-icon-add">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+
+                <div id="exercises_list_container" class="exercises-list">
+                    </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="btn_cancel_modal" class="btn-secondary">Cancelar</button>
+                <button id="btn_save_routine" class="btn-primary">Guardar Rutina</button>
+            </div>
+        </div>
 </body>
 </html>
