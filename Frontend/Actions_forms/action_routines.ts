@@ -41,21 +41,21 @@ btnCloseModal.addEventListener('click', () => toggleModal(false));
 btnCancelModal.addEventListener('click', () => toggleModal(false));
 
 function removeExercise(index: number) {
-    tempExercises.splice(index, 1); // Lo borra del array
-    renderExercisesList(); // Vuelve a pintar la lista
+    tempExercises.splice(index, 1); 
+    renderExercisesList(); 
 }
 
 function clearForm() {
     input_routine_name.value = '';
     cb_day_routine.value = 'Lunes';
-    tempExercises = []; // Vaciamos el array
-    renderExercisesList(); // Limpiamos la vista
+    tempExercises = []; 
+    renderExercisesList(); 
 }
 function renderExercisesList() {
-    listContainer.innerHTML = ''; // Borramos lo que había para repintar
+    listContainer.innerHTML = ''; 
 
     tempExercises.forEach((ex, index) => {
-        // Creamos el HTML de cada item
+        
         const itemDiv = document.createElement('div');
         itemDiv.className = 'exercise-item';
         itemDiv.innerHTML = `
@@ -65,7 +65,7 @@ function renderExercisesList() {
             </button>
         `;
         
-        // Agregamos evento al botón de borrar de este item
+        
         const btnDel = itemDiv.querySelector('.btn-delete-ex') as HTMLButtonElement;
         btnDel.addEventListener('click', () => removeExercise(index));
 
@@ -183,42 +183,4 @@ window.addEventListener("load", async(e) =>{
         console.log("Anda algo mal", error)
         alert("Error de conexión con el servidor")
     }
-})
-
-
-
-
-
-
-
-
-
-
-
-/*
-<div class="routines-grid" id="routines_container">
-            
-            <div class="routine-card">
-                <div class="card-icon">
-                    <i class="fas fa-dumbbell"></i>
-                </div>
-                <div class="card-info">
-                    <h3>LUNES: Pecho & Tríceps</h3>
-                    <p>8 ejercicios</p>
-                </div>
-                <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
-            </div>
-
-            <div class="routine-card">
-                <div class="card-icon">
-                    <i class="fas fa-running"></i>
-                </div>
-                <div class="card-info">
-                    <h3>MIÉRCOLES: Pierna</h3>
-                    <p>6 ejercicios</p>
-                </div>
-                <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
-            </div>
-            </div>
-
-*/ 
+}) 
